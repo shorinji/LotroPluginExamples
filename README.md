@@ -58,3 +58,8 @@ This corresponds to the directory *FredriksExamples\Example1* and a file named *
 In the minimal example, this is the file referenced from the .plugin file above, and is run when the plugin is loaded.
 In this file you can create UI elements, start loading preferences, register chat commands and run any code that should happen immediately.
 For more advanced code, you will need to register event listeners, to pick up on game events as they occur. More on this later...
+
+
+### Status of this document and code
+
+This document was written when Lotro is in version Update 23 (november 2018). As the game evolves, the API details could change, making the example code stop working. If so, give me a shout!
