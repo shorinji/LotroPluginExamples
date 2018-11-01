@@ -15,8 +15,9 @@ Plugins for lotro are more restricted than plugins in certain other games (wow),
 
 ### What a plugin can do 
 
+* Read information from the game world such as info about the character, items, skills, mounts and crafting
 * Draw custom User Interfaces
-* Interact with chat: register new commands, write text
+* Interact with chat like register new /commands, write text
 * Subscribe to game events and run code as a reaction
 * Save and load data to keep state between sessions of play
 
@@ -25,7 +26,7 @@ Plugins for lotro are more restricted than plugins in certain other games (wow),
 #### Simulate user interaction
 
 This includes moving the character, attack or interact with objects or npcs, trigger quickslots.
-Basically if something shows up in the Keybinding menu, you cannot trigger it with code.
+Basically, if something shows up in the Keybinding menu, you cannot trigger it with code.
 
 
 ## Howto install and manage plugin
