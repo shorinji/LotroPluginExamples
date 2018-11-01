@@ -20,3 +20,25 @@ Once you have that directory, you can copy plugins there. The plugins normally a
 
 After a plugin is in that directory, the game will pick it up on startup and show it in the *Manage Plugins* menu on the character selection screen. (Or in-game by typing */plugins manager* in chat).
 You can even add or modify plugins *without restarting* the game by typing */plugins refresh* in the chat, then unload and reload the plugin.
+
+
+## Anatomy of a plugin
+
+At a minimum, a lotro plugin needs to consists of just two files.
+
+### A .plugin manifest file
+
+An XML file containing name, description, version etc. 
+Also, most importantly, it contains a reference to the code entrypoint. This is the code file that the game runs when the plugin is loaded.
+It is written in the following format.
+
+	<Package>FredriksExamples.Example1.Main</Package>
+
+This corresponds to the directory *FredriksExamples\Example1* and a file named *Main.lua* in that directory.
+
+
+### A .lua code file
+
+In the minimal example, this is the file referenced from the .plugin file above, and is run when the plugin is loaded.
+In this file you can create UI elements, start loading preferences, register chat commands and run any code that should happen immediately.
+For more advanced code, you will need to register event listeners, to pick up on game events as they occur. More on this later...
