@@ -61,9 +61,9 @@ For more advanced code, you will need to register event listeners, to pick up on
 
 ### Further reading
 
-My primary source is [[https://www.lotro.com/forums/showthread.php?428196-Writing-LoTRO-Lua-Plugins-for-Noobs | this forum post]] by Garan explaining quite verbosely how plugins work and various aspect of the development.
+My primary source is [this forum post](https://www.lotro.com/forums/showthread.php?428196-Writing-LoTRO-Lua-Plugins-for-Noobs) by Garan explaining quite verbosely how plugins work and various aspect of the development.
 
-Another useful source is [[https://www.lotrointerface.com/downloads/info997-UpdatedLuaDocumentation.html | the official API docs]]. While not saying anything about "how", it gives an overview of the game resources exposed and what events you can connect to.
+Another useful source is [the latest official API docs](https://www.lotrointerface.com/downloads/info997-UpdatedLuaDocumentation.html). While not saying anything about "how", it gives an overview of the game resources exposed and what events you can connect to.
 
 ### Status of this document and code
 
