@@ -30,7 +30,7 @@ Basically, if something shows up in the Keybinding menu, you cannot trigger it w
 ## Howto install and manage plugin
 
 Plugins are installed by copying it to the game's *Plugins directory*. The *Plugins directory* is part of the game's user files, normally located in *C:\Users\yourusername\Documents\The Lord of the Rings Online\*. First time, you will have to create the *Plugins directory* yourself as *C:\Users\yourusername\Documents\The Lord of the Rings Online\Plugins*.
-Once you have that directory, you can copy plugins there. The plugins normally are located in a directory named after the plugin's creator, or the plugin name.
+Once you have that directory, you can copy plugins there. The plugins normally are located in a directory named after the plugin's creator, or the plugin name. For my examples, the root directory is FredriksExamples. Once copied, this directory should reside directly in the Plugins directory.
 
 After a plugin is in the right directory the game will pick it up on startup. Alternatively you can type the command */plugins refresh*. The plugin will then show up in the *Manage Plugins* panel in-game by typing */plugins manager*.
 
@@ -53,7 +53,11 @@ This corresponds to the directory *FredriksExamples\Example1* and a file named *
 
 In the minimal example, this is the file referenced from the .plugin file above, and is run when the plugin is loaded.
 In this file you can create UI elements, start loading preferences, register chat commands and run any code that should happen immediately.
-For more advanced code, you will need to register event listeners, to pick up on game events as they occur. More on this later...
+
+### Graphics resources
+
+If your plugins is of a visual kind, you will want to include custom images to use as screen overlays or inside windows.
+
 
 ## My Example Plugins
 
