@@ -21,3 +21,10 @@ We have added some type checking (type(equipmentSlotId) == "number" and item ~= 
 
 Note: the window is not updated live (eg: lose or gain morale).
 Gotcha: when you learn lua, the "local" keyword is used to declare local variables. If you by mistake make the Window UI component local, it will be garbage collected immediately when the plugin completes loading. Therefore it is shown for a brief second, then is hidden.
+
+## Upcoming examples
+
+* Using common helper code
+* Advanced chat interaction
+* Listening to events
+* Writing our own Combat stats plugin
