@@ -1,17 +1,15 @@
 # Lotro Plugin Examples
 
-This repository contains example plugins for Lord of the Rings Online (lotro) with the purpose of learning how plugins work
+This repository contain some example plugins for Lord of the Rings Online (lotro) with the purpose of learning how plugins work.
 
-There is currently one example, aptly named *Fredrik's Example 1*.
+To try it out, clone or download this repo and follow the instructions below.
 
-To try it out, clone or download this repo and place the *FredriksExamples* directory in the game's plugin directory.
-
-The game will recognize the plugin allowing you to load it like other plugins
+The game will recognize the plugin allowing you to load it like other plugins, through the /plugin manager command.
 
 ## About LOTRO plugins
 
 Coded in the Lua language, plugins can extend the game with some new custom functionality not included from the start.
-Plugins for lotro are more restricted than plugins in certain other games (wow), where you can automate just about anything.
+Plugins for lotro are more restricted than those for certain other games (wow), where you can automate just about anything.
 
 ### What a plugin can do 
 
@@ -31,13 +29,10 @@ Basically, if something shows up in the Keybinding menu, you cannot trigger it w
 
 ## Howto install and manage plugin
 
-Plugins are installed by copying it to the game's *Plugin directory*. The *Plugins directory* is part of the game's user files, normally located in *C:\Users\yourusername\Documents\The Lord of the Rings Online*. First time, you will have to create the *Plugins directory* yourself as *C:\Users\yourusername\Documents\The Lord of the Rings Online\Plugins*.
+Plugins are installed by copying it to the game's *Plugins directory*. The *Plugins directory* is part of the game's user files, normally located in *C:\Users\yourusername\Documents\The Lord of the Rings Online\*. First time, you will have to create the *Plugins directory* yourself as *C:\Users\yourusername\Documents\The Lord of the Rings Online\Plugins*.
 Once you have that directory, you can copy plugins there. The plugins normally are located in a directory named after the plugin's creator, or the plugin name.
 
-After a plugin is in the directory, the game will pick it up on startup and show it in the *Manage Plugins* menu on the character selection screen. (Or in-game by typing */plugins manager* in chat).
-
-You can even add or modify plugins *without restarting* the game by typing */plugins refresh* in the chat, then unload and reload the plugin.
-
+After a plugin is in the right directory the game will pick it up on startup. Alternatively you can type the command */plugins refresh*. The plugin will then show up in the *Manage Plugins* panel in-game by typing */plugins manager*.
 
 ## Anatomy of a plugin
 
@@ -60,7 +55,12 @@ In the minimal example, this is the file referenced from the .plugin file above,
 In this file you can create UI elements, start loading preferences, register chat commands and run any code that should happen immediately.
 For more advanced code, you will need to register event listeners, to pick up on game events as they occur. More on this later...
 
-### Further reading
+## My Example Plugins
+
+See README.md in each example sub-directory for individual documentation.
+
+
+## Further reading
 
 My primary source is [this forum post](https://www.lotro.com/forums/showthread.php?428196-Writing-LoTRO-Lua-Plugins-for-Noobs) by Garan explaining quite verbosely how plugins work and various aspect of the development.
 
