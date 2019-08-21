@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Plugin>
+	<Information>
+		<Name>FredriksExample3</Name>
+		<Author>Fredrik F</Author>
+		<Version>1.0</Version>
+	</Information>
+	<Package>FredriksExamples.Example3.Main</Package>
+</Plugin>
