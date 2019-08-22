@@ -11,10 +11,9 @@ and registers the command, so that it is accessible from the game chat for the p
 
 This plugion displays a window in the center of the screen with a custom character screen.
 
-The window is populated by a number of Labels and a ListBox for displaying different text.
-At the top of the file two helper functions are declared: getRaceName and getClassName. Breaking code out into functions is a way of separating tasks, and can help document what different parts of the code does. Each helper has a similar structure, using a for loop to iterate over the tables containing character races and classes to use IDs from the local player to lookup the corresponding names.
+The window is populated by a number of Labels and a ListBox for displaying different text. At the top of the file a couple of helper functions are declared: getRaceName, getClassName and createEquipmentList. Breaking code out into functions is a way of separating tasks, and can help document what different parts of the code does. Each helper has a similar structure, using a for loop to iterate over the tables containing character races and classes to use IDs from the local player to lookup the corresponding names.
 
-Finally equipment names are fetched for each slot. This is a little more complicated as the related information needs to be fetched from the local player (GetEquipment), equipment for a slot (equipment:GetItem), and finally item:GetName. 
+The most non-trivial thing is fetching equipment slots and items equipped. The related information needs to be looked up from the various involved entities: local player (GetEquipment), equipment for a slot (equipment:GetItem), and finally item:GetName. 
 As equipment:GetItem() requires a slot ID as an argument, we iterate over Turbine.Gameplay.Equipment to find each equipable slot. 
 
 We have added some type checking (type(equipmentSlotId) == "number" and item ~= nil) since Turbine.Gameplay.Equipment contains values that are not part of the enumeration of equippable slots. Also, when a slot is empty, the item will be equal to nil.
