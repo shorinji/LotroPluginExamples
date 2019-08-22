@@ -21,6 +21,37 @@ function getClassName(myClassId)
 	return "Unknown"
 end
 
+function createEquipmentList(equipment)
+	equipmentList = Turbine.UI.ListBox()
+	equipmentList:SetPosition(40, 160)   
+	equipmentList:SetSize(400, 350)
+   
+	for equipmentSlotName, equipmentSlotId in pairs(Turbine.Gameplay.Equipment) do
+		if type(equipmentSlotId) == "number" then
+			item = equipment:GetItem(equipmentSlotId)
+			if item ~= nil then
+				equipmentSlotLabel = Turbine.UI.Label()
+				equipmentSlotLabel:SetPosition(0, 0)
+				equipmentSlotLabel:SetSize(150, 15)
+				equipmentSlotLabel:SetText(equipmentSlotName)
+				
+				slottedItemLabel = Turbine.UI.Label()
+				slottedItemLabel:SetPosition(150, 0)
+				slottedItemLabel:SetSize(400, 15)
+			 	slottedItemLabel:SetText(item:GetName())
+
+				listItem = Turbine.UI.Control()
+				listItem:SetSize(550, 15)
+
+				equipmentSlotLabel:SetParent(listItem)
+				slottedItemLabel:SetParent(listItem)
+
+				equipmentList:AddItem(listItem)
+			end
+		end
+	end
+	return equipmentList
+end
 
 characterWindow = Turbine.UI.Lotro.Window()
 characterWindow:SetSize(500, 550)
@@ -57,40 +88,10 @@ equipmentLabel:SetSize(200, 20)
 equipmentLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro14)
 equipmentLabel:SetText("Equipment")
 
-
-equipmentList = Turbine.UI.ListBox()
-equipmentList:SetParent(characterWindow)
-equipmentList:SetPosition(40, 160)   
-equipmentList:SetSize(400, 350)
-   
-
 equipment = player:GetEquipment()
-for equipmentSlotName, equipmentSlotId in pairs(Turbine.Gameplay.Equipment) do
-	if type(equipmentSlotId) == "number" then
-		item = equipment:GetItem(equipmentSlotId)
-		if item ~= nil then
-			equipmentSlotLabel = Turbine.UI.Label()
-			equipmentSlotLabel:SetPosition(0, 0)
-			equipmentSlotLabel:SetSize(150, 15)
-			equipmentSlotLabel:SetText(equipmentSlotName)
-			
-			slottedItemLabel = Turbine.UI.Label()
-			slottedItemLabel:SetPosition(150, 0)
-			slottedItemLabel:SetSize(400, 15)
-		 	slottedItemLabel:SetText(item:GetName())
 
-			listItem = Turbine.UI.Control()
-			listItem:SetSize(550, 15)
-
-			equipmentSlotLabel:SetParent(listItem)
-			slottedItemLabel:SetParent(listItem)
-
-			equipmentList:AddItem(listItem)
-		end
-	end
-end
-	
-
+equipmentList = createEquipmentList(equipment)
+equipmentList:SetParent(characterWindow)
 
 characterWindow:SetText("Custom character panel")
 characterWindow:SetVisible(true)
