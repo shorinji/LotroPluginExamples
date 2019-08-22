@@ -9,16 +9,18 @@ import "FredriksExample.Common.Misc"
 combatWarningLabel = Turbine.UI.Label()
 combatWarningLabel:SetSize(500, 100)
 combatWarningLabel:SetPosition(
-	Turbine.UI.Display.GetWidth() / 2) - (combatWarningLabel:GetWidth() / 2, 
-	Turbine.UI.Display.GetHeight() / 3) - (combatWarningLabel:GetHeight() / 2)
+	(Turbine.UI.Display.GetWidth() / 2) - (combatWarningLabel:GetWidth() / 2),
+	(Turbine.UI.Display.GetHeight() / 3) - (combatWarningLabel:GetHeight() / 2)
+)
 
-combatWarningLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro14)
-combatWarningLabel:SetText("<rgb=#ff0000>Warning</rgb> you are in combat!")
+combatWarningLabel:SetFont(Turbine.UI.Lotro.Font.TrajanPro28)
+combatWarningLabel:SetText("<rgb=#ff0000>Warning:</rgb> Entering combat!")
 
 player = Turbine.Gameplay.LocalPlayer:GetInstance()
-isInCombat = player:IsInCombat()
+
+combatWarningLabel:SetVisible(player:IsInCombat())
+
 
 Misc.AddCallback(player, "InCombatChanged", function()
-	isInCombat = player:IsInCombat()
-	combatWarningLabel:SetVisible(isInCombat)
+	combatWarningLabel:SetVisible(player:IsInCombat())
 end)
