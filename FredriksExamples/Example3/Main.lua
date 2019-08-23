@@ -3,7 +3,7 @@ import "Turbine.Gameplay"
 import "Turbine.UI"
 import "Turbine.UI.Lotro"
 
-import "FredriksExample.Common.Misc"
+import "FredriksExamples.Example3.Common.Misc"
 
 
 combatWarningLabel = Turbine.UI.Label()
